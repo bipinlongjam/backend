@@ -29,6 +29,6 @@ const contactController = require('../controllers/contactController')
 
 router.get('/contactus', contactController.getContactUs);
 router.post('/success', contactController.postSuccess);
-router.get('/success', contactController.getSuccess)
+router.get('/success', contactController.getSuccess);
 
 module.exports = router;

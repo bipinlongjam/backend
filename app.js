@@ -12,15 +12,15 @@ const shopRoutes = require('./routes/shop');
 const contactRoutes = require('./routes/contactus')
 const path = require('path');
 
+const errorController = require('./controllers/errorController')
+
 app.use(bodyParser.urlencoded({extended:false}));
 
 app.use(adminRoutes);
 app.use(shopRoutes);
 app.use(contactRoutes);
 
-app.use((req, res, next) =>{
-    res.status(404).sendFile(path.join(__dirname, "views", "404.html"))
-})
+app.use(errorController.get404)
 
 server.listen(PORT,() =>{
         console.log("server started")
